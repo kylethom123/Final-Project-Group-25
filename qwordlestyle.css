@@ -1,0 +1,101 @@
+.site-body{
+    font-family:'Roboto';
+    background-color: #EEEEEE;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0px;
+}
+
+Header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.site-title {
+    Color: white;
+    background-color: #8AE3A8;
+    font-weight: bold;
+    margin: 0px;
+    padding: 5px;
+    border: 3px solid #8AE3A8;
+    border-bottom-color: black;
+}
+
+.site-background {
+    position: absolute;
+    top: 60px;
+    right: 250px;
+    left: 250px;
+    bottom: 0px;
+    margin: 0px;
+    margin-bottom: 25px;
+    display: grid;
+    grid-template-rows: min-content 215px 225px auto;
+    row-gap: 20px;
+    grid-auto-flow: column dense;
+    justify-content: center;
+}
+
+.game-info {
+}
+
+.game-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0px;
+}
+
+.game-hint {
+    margin: 0px;
+    margin-top: 20px;
+    text-align: center;
+    text-overflow: wrap;
+    border-bottom: 1px solid gray;
+}
+
+.game-guess-container {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, auto);
+    grid-auto-flow: column dense;
+    justify-content: center;
+}
+
+.game-tile {
+    aspect-ratio: 1;
+    width: 65px;
+    padding: 0px;
+    margin: 2px;
+    background-color: #DBDBDB;
+    border: 1px solid black;
+}
+
+.keyboard-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.keyboard-row {
+    display: grid;
+    grid-auto-flow: column dense;
+    justify-content: center;
+}
+
+.keyboard-tile {
+    aspect-ratio: 1;
+    width: 45px;
+    padding: 0px;
+    margin: 2px;
+    background-color: #DBDBDB;
+    border: 1px solid black;
+    text-align: center;
+    font-weight: bold;
+    user-select: none;
+}
