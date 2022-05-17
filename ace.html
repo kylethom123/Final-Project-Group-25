@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ACE</title>
+    <link rel="stylesheet" href="ace(main).css" media="screen" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="site-body">
+    <header>
+      <h1 class="site-title">ACE</h1>
+    </header>
+    <div class="side-bar">
+      <h2>Filters:</h2>
+      <label for="sort-by">sort by</label>
+      <select name="sort-by" id="sort-by">
+        <option value="rating-asc">rating (ascending)</option>
+        <option value="rating-dsc">rating (descending)</option>
+        <option value="date-added-asc">date added (ascending)</option>
+        <option value="date-added-dsc">date added (descending)</option>
+        <option value="alphabetical-asc">alphabetical (a-z)</option>
+        <option value="alphabetical-dsc">alphabetical (z-a)</option>
+        <option value="num-cards-asc">number of cards (ascending)</option>
+        <option value="num-cards-dsc">number of cards (descending)</option>
+      </select>
+      <h2>Topics:</h2>
+      <div class="topic-box">Example box</div>
+      <div class="topic-box">
+          <button class="create-topic-button">New Topic</button>
+      </div>
+    </div>
+    <div class="main"></div>
+  </body>
+</html>

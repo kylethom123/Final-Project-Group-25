@@ -1,0 +1,64 @@
+.site-body{
+  font-family:'Roboto';
+  background-color: #EEEEEE;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 0px;
+}
+
+Header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.site-title {
+  Color: white;
+  background-color: #8AE3A8;
+  font-weight: bold;
+  margin: 0px;
+  padding: 5px;
+  border: 3px solid #8AE3A8;
+  border-color: black;
+  
+}
+.site-background {
+  position: absolute;
+  top: 60px;
+  right: 250px;
+  left: 250px;
+  bottom: 0px;
+  margin: 0px;
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-rows: min-content 215px 225px auto;
+  row-gap: 20px;
+  grid-auto-flow: column dense;
+  justify-content: center;
+}
+.side-bar{
+  background-color:white;
+  margin-top: 54px;
+  margin-right:1210px;
+  height: 800px;
+  border-right:3px solid white;
+  border-left:3px solid white;
+  border-color:black
+}
+h2{
+  margin-top:10px;
+  margin-bottom:0px;
+}
+.topic-box{
+  text-align:center;
+  height: 30px;
+  font-size:large;
+  margin: 10px;
+  border:3px solid white;
+  border-color:black;
+  padding-top:5px;
+}
