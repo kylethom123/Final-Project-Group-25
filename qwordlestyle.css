@@ -75,6 +75,10 @@ Header {
     margin: 2px;
     background-color: #DBDBDB;
     border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;
 }
 
 .keyboard-container {
