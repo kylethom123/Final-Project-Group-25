@@ -46,6 +46,7 @@ class Snake {
         ctx.fillStyle = 'lightblue';
         ctx.strokeStyle = 'darkblue';
         this.segments.forEach(function (segment){
+            
             ctx.fillRect(...segment, GRID_SIZE, GRID_SIZE);
             ctx.strokeRect(...segment, GRID_SIZE, GRID_SIZE);
         })
@@ -53,10 +54,15 @@ class Snake {
 
     is_self_colliding () {
         let segments = this.segments;
-        return Array.from(segments.entries()).some(function (pair) {
-            var i, segment = pair;
-            return segments.slice(i + 1).includes(segment);
-        });
+        for (var i = 0; i < this.segments.length; ++i) {
+            if (this.segments.slice(i + 1).some(function (segment) {
+                return segment[0] === segments[i][0] && segment[1] === segments[i][1];
+            })) {
+                return true;
+            }
+        }
+        return false;
+        
     }
 
     out_of_bounds(width, height) {
@@ -91,7 +97,7 @@ class QSnakeGame {
     }
 
     on_start () {
-        this.snake = Snake.create([80, 80], 3, [1, 0]);
+        this.snake = Snake.create([200, 200], 7, [1, 0]);
         document.addEventListener('keypress', (evt) => (this.on_keypress(evt)));
     }
     
@@ -154,7 +160,7 @@ function game_loop (game, ctx) {
     game.on_step(ctx);
     if (game.is_done())
         return;
-    setTimeout(() => game_loop(game, ctx), 50);
+    setTimeout(() => game_loop(game, ctx), 100);
 }
 
 function do_game() {
