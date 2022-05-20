@@ -51,6 +51,23 @@ class Snake {
         })
     }
 
+    is_self_colliding () {
+        let segments = this.segments;
+        return Array.from(segments.entries()).some(function (pair) {
+            var i, segment = pair;
+            return segments.slice(i + 1).includes(segment);
+        });
+    }
+
+    out_of_bounds(width, height) {
+        return this.segments.some(function (segment) {
+            return !(
+                0 <= segment[0] && segment[0] < width
+             && 0 <= segment[1] && segment[1] < height
+            );
+        });
+    }
+
     static create(starting_pos, starting_length, starting_direction) {
         var segments = [];
         var dir = starting_direction;
@@ -115,27 +132,45 @@ class QSnakeGame {
 
     on_step (ctx) {
         this.snake.move();
+        if (this.check_collisions())
+            return;
         this.draw_board(ctx);
         this.snake.draw(ctx);
+    }
+
+    check_collisions () {
+        return this.snake.is_self_colliding() || this.snake.out_of_bounds(this.width, this.height);
+    }
+
+    is_done() {
+
+        return this.check_collisions();
     }
 
 
 }
 
-function draw() {
+function game_loop (game, ctx) {
+    game.on_step(ctx);
+    if (game.is_done())
+        return;
+    setTimeout(() => game_loop(game, ctx), 50);
+}
+
+function do_game() {
     var canvas = document.getElementById('qsnake-canvas');
+    
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
 
         var game = new QSnakeGame(canvas.width, canvas.height, 'rgb(127, 127, 127)', 'rgb(0, 0, 0)');
         game.on_start();
-        document.addEventListener('keypress', (evt) => game.on_step(ctx));
-        game.on_step(ctx);
+        game_loop(game, ctx);
     }
 }
 
 function main () {
-    draw();
+    do_game();
 }
 
 main();
