@@ -20,18 +20,9 @@
 }
 
 .play-area {
-    position: absolute;
-    top: 60px;
-    right: 250px;
-    left: 250px;
-    bottom: 0px;
-    margin: 0px;
-    margin-bottom: 25px;
-    display: grid;
-    grid-template-rows: min-content 215px 225px auto;
-    row-gap: 20px;
-    grid-auto-flow: column dense;
     justify-content: center;
+    margin: 50px 10%;
+    display: grid;
 }
 
 .game-title {
@@ -51,8 +42,22 @@
 }
 
 .word-pool {
-    display: grid;
+    display: flex;
+    margin-bottom: 20px;
 }
+
+.words {
+    flex: 0 1 28%;
+    min-width: 256px;
+    display: flex;
+    margin: 2px;
+    padding: 20px;
+    border: 1px solid #dadada;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
 .def-pool {
-    display: grid;
+    display: flex;
+    margin-top: 20px;
 }
